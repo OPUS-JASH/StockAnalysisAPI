@@ -18,7 +18,8 @@ app.use(express.urlencoded());
 app.use(cors());
 
 const PORT = 3000;
-const MONGO_URL = "mongodb://localhost:27017/TestAPI";
+const MONGO_URL = "mongodb+srv://OPUSTECH_STOCK:opus_jash_123@stockanalysis.755epv7.mongodb.net/?retryWrites=true&w=majority";
+
 
 mongoose
   .connect(MONGO_URL, {
