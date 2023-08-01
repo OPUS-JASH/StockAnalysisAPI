@@ -3,13 +3,14 @@ const express = require('express');
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const cors = require('cors')
-
+require("dotenv").config();
 const fetchData = require('./Routes/fetchData.js');
 const filterCSVFile = require('./Routes/filterCSVFile.js');
 const validateDates = require('./Routes/validateDates.js');
 
 
 const app = express();
+
 
 mongoose.Promise = global.Promise;
 app.use(bodyParser.json());
@@ -18,7 +19,7 @@ app.use(express.urlencoded());
 app.use(cors());
 
 const PORT = 3000;
-const MONGO_URL = "mongodb+srv://OPUSTECH_STOCK:opus_jash_123@stockanalysis.755epv7.mongodb.net/?retryWrites=true&w=majority/test";
+const MONGO_URL = `${process.env.MONGO_URL}`;
 
 
 mongoose
